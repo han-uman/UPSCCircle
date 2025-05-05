@@ -54,6 +54,29 @@ const mockGoals = [
   { id: '4', title: 'Daily Current Affairs', deadline: 'Ongoing', progress: 80 },
 ];
 
+// Add the missing mockTasks data
+const mockTasks = [
+  {
+    id: '1',
+    date: 'Today',
+    tasks: [
+      { id: 't1', title: 'Revise Polity - Chapter 5', completed: true },
+      { id: 't2', title: 'Solve 30 Economy MCQs', completed: true },
+      { id: 't3', title: 'Read The Hindu Editorial', completed: true },
+      { id: 't4', title: 'Answer writing practice', completed: false },
+    ]
+  },
+  {
+    id: '2',
+    date: 'Yesterday',
+    tasks: [
+      { id: 't5', title: 'Complete Geography maps', completed: true },
+      { id: 't6', title: 'Make notes on Ancient History', completed: true },
+      { id: 't7', title: 'Current affairs revision', completed: true },
+    ]
+  },
+];
+
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
   
