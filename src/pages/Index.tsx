@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { BookOpen, Users, Calendar, MessageSquare } from 'lucide-react';
+import { BookOpen, Users, Calendar, MessageSquare, Trophy } from 'lucide-react';
+import QuoteGenerator from '@/components/motivation/QuoteGenerator';
+import Logo from '@/components/ui/logo';
 
 const Index = () => {
   return (
@@ -17,7 +19,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-gray-900">
-                  Connect, Learn & Grow with <span className="text-upsc-purple">UPSC</span><span className="text-upsc-purple-light">Circle</span>
+                  Connect, Learn & Grow with <Logo className="inline-flex mt-2" />
                 </h1>
                 <p className="text-xl text-gray-700 mb-6">
                   A dedicated social platform for UPSC aspirants to share their journey, find mentors, and achieve success together.
@@ -70,6 +72,16 @@ const Index = () => {
           </div>
         </section>
         
+        {/* Motivation Corner */}
+        <section className="py-12 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-8">Motivation Corner</h2>
+            <div className="max-w-3xl mx-auto">
+              <QuoteGenerator className="shadow-md" />
+            </div>
+          </div>
+        </section>
+        
         {/* Features Section */}
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,19 +111,19 @@ const Index = () => {
                 <div className="h-12 w-12 rounded-full bg-upsc-blue-light/30 flex items-center justify-center text-blue-700 mb-4">
                   <MessageSquare size={24} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Mentorship</h3>
+                <h3 className="text-xl font-semibold mb-3">Connect & Chat</h3>
                 <p className="text-gray-700">
-                  Request guidance from experienced mentors and collaborate with senior aspirants.
+                  Build your network with like-minded aspirants, chat with mentors, and grow together.
                 </p>
               </div>
               
               <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover-scale card-shadow">
                 <div className="h-12 w-12 rounded-full bg-upsc-purple-light/20 flex items-center justify-center text-upsc-purple mb-4">
-                  <BookOpen size={24} />
+                  <Trophy size={24} />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Resource Sharing</h3>
+                <h3 className="text-xl font-semibold mb-3">Achievements</h3>
                 <p className="text-gray-700">
-                  Discover curated study materials, notes, and strategies shared by the community.
+                  Earn badges, climb leaderboards, and maintain streaks as you achieve your study goals.
                 </p>
               </div>
             </div>

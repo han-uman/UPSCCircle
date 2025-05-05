@@ -11,6 +11,7 @@ import Circles from "./pages/Circles";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import Connections from "./pages/Connections";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/circles" element={<Circles />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/connections" element={<Connections />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
