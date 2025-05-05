@@ -80,7 +80,7 @@ const ChatDrawer = ({ children, connectionId, connectionName }: ChatDrawerProps)
       {
         id: '1-2',
         senderId: 'current-user',
-        text: 'Yes! I've been working through the Geography optional syllabus. How about you?',
+        text: "Yes! I've been working through the Geography optional syllabus. How about you?",
         timestamp: new Date(Date.now() - 1000 * 60 * 60 * 1.5), // 1.5 hours ago
         senderName: 'You',
         senderIsCurrentUser: true,
@@ -130,7 +130,7 @@ const ChatDrawer = ({ children, connectionId, connectionName }: ChatDrawerProps)
       {
         id: '2-2',
         senderId: 'current-user',
-        text: 'Yes, I'm struggling with understanding some concepts in the monetary policy section.',
+        text: "Yes, I'm struggling with understanding some concepts in the monetary policy section.",
         timestamp: new Date(Date.now() - 1000 * 60 * 60 * 23), // 23 hours ago
         senderName: 'You',
         senderIsCurrentUser: true,
@@ -148,7 +148,7 @@ const ChatDrawer = ({ children, connectionId, connectionName }: ChatDrawerProps)
       {
         id: '3-1',
         senderId: 'current-user',
-        text: 'Hey Aditya! How's your preparation going?',
+        text: "Hey Aditya! How's your preparation going?",
         timestamp: new Date(Date.now() - 1000 * 60 * 60 * 48), // 2 days ago
         senderName: 'You',
         senderIsCurrentUser: true,
