@@ -7,6 +7,7 @@ import ProfileCard from '@/components/profile/ProfileCard';
 import ProfileStats from '@/components/profile/ProfileStats';
 import UserBadges from '@/components/profile/UserBadges';
 import FeedPost from '@/components/feed/FeedPost';
+import LevelProgress from '@/components/profile/LevelProgress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -26,6 +27,9 @@ const mockUser = {
   following: 134,
   followers: 89,
   streak: 23,
+  level: 8,
+  currentXP: 750,
+  levelXP: 1000,
 };
 
 // Mock posts data
@@ -132,6 +136,9 @@ const Profile = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <ProfileCard user={mockUser} isCurrentUser={true} />
+            <div className="mb-6">
+              <LevelProgress currentXP={mockUser.currentXP} levelXP={mockUser.levelXP} level={mockUser.level} />
+            </div>
             <ProfileStats stats={mockStats} />
             
             <div className="my-6 flex justify-between items-center">

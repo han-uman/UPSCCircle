@@ -10,13 +10,16 @@ import {
   LogIn, 
   User, 
   BookOpen,
-  Users
+  Users,
+  BarChart3,
+  Medal,
+  Trophy
 } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   // Mock authentication state - would be managed by a proper auth provider
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true); // Set to true for development
 
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -40,6 +43,10 @@ const Navbar = () => {
                   <Users size={18} />
                   <span>Circles</span>
                 </Link>
+                <Link to="/dashboard" className="text-gray-600 hover:text-upsc-purple px-3 py-2 rounded-md font-medium flex items-center gap-2">
+                  <BarChart3 size={18} />
+                  <span>Dashboard</span>
+                </Link>
                 <div className="relative">
                   <Button variant="ghost" size="icon" className="text-gray-600 hover:text-upsc-purple">
                     <Bell size={20} />
@@ -49,6 +56,10 @@ const Navbar = () => {
                 <Button variant="ghost" size="icon" className="text-gray-600 hover:text-upsc-purple">
                   <Search size={20} />
                 </Button>
+                <div className="flex items-center gap-2 bg-gray-50 rounded-full px-2 py-1 border">
+                  <Trophy className="h-4 w-4 text-orange-500" />
+                  <span className="text-sm font-medium">1250</span>
+                </div>
                 <Link to="/profile">
                   <Button variant="outline" className="rounded-full h-10 w-10 p-0" size="icon">
                     <User size={18} />
@@ -104,7 +115,14 @@ const Navbar = () => {
                   className="flex items-center gap-2 text-gray-600 hover:bg-upsc-purple-light/10 hover:text-upsc-purple block px-3 py-2 rounded-md text-base font-medium"
                 >
                   <Users size={18} />
-                  <span>Circles</span>
+                  <span>Study Circles</span>
+                </Link>
+                <Link
+                  to="/dashboard"
+                  className="flex items-center gap-2 text-gray-600 hover:bg-upsc-purple-light/10 hover:text-upsc-purple block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  <BarChart3 size={18} />
+                  <span>Dashboard</span>
                 </Link>
                 <Link
                   to="/profile"
