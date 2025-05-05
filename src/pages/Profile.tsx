@@ -1,12 +1,17 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ProfileCard from '@/components/profile/ProfileCard';
+import ProfileStats from '@/components/profile/ProfileStats';
+import UserBadges from '@/components/profile/UserBadges';
 import FeedPost from '@/components/feed/FeedPost';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import CircleCard from '@/components/circles/CircleCard';
+import { Award, Medal, Star, Trophy } from 'lucide-react';
 
 // Mock user data
 const mockUser = {
@@ -99,6 +104,23 @@ const mockTasks = [
   },
 ];
 
+// Mock badges data
+const mockBadges = [
+  { id: '1', title: 'Early Bird', description: 'Completed 5 days of morning study sessions', icon: <Star className="text-amber-500" size={20} />, unlocked: true },
+  { id: '2', title: 'Consistency King', description: 'Maintained a 30-day streak', icon: <Trophy className="text-upsc-purple" size={20} />, unlocked: true },
+  { id: '3', title: 'Subject Master', description: 'Completed all topics in a subject', icon: <Award className="text-blue-500" size={20} />, unlocked: true },
+  { id: '4', title: 'Knowledge Explorer', description: 'Read 50 current affairs articles', icon: <Medal className="text-green-500" size={20} />, unlocked: false },
+  { id: '5', title: 'Quiz Champion', description: 'Scored 90% in 10 quizzes', icon: <Star className="text-red-500" size={20} />, unlocked: false },
+];
+
+// Mock stats data
+const mockStats = {
+  points: 1250,
+  rank: 42,
+  tasksCompleted: 127,
+  streak: 23,
+};
+
 const Profile = () => {
   const [activeTab, setActiveTab] = useState('posts');
   
@@ -110,12 +132,27 @@ const Profile = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <ProfileCard user={mockUser} isCurrentUser={true} />
+            <ProfileStats stats={mockStats} />
+            
+            <div className="my-6 flex justify-between items-center">
+              <h3 className="text-lg font-bold">Recent Achievements</h3>
+              <Link to="/dashboard">
+                <Button variant="link" className="text-upsc-purple">
+                  View Dashboard
+                </Button>
+              </Link>
+            </div>
+            
+            <div className="mb-6">
+              <UserBadges badges={mockBadges} compact={true} />
+            </div>
             
             <Tabs defaultValue="posts" onValueChange={setActiveTab} className="w-full">
               <TabsList className="w-full border-b mb-6">
                 <TabsTrigger value="posts" className="flex-1">Posts</TabsTrigger>
                 <TabsTrigger value="circles" className="flex-1">Study Circles</TabsTrigger>
                 <TabsTrigger value="tasks" className="flex-1">Tasks & Streak</TabsTrigger>
+                <TabsTrigger value="badges" className="flex-1">Badges</TabsTrigger>
               </TabsList>
               
               <TabsContent value="posts" className="space-y-4">
@@ -195,6 +232,13 @@ const Profile = () => {
                       })}
                     </div>
                   </div>
+                </Card>
+              </TabsContent>
+              
+              <TabsContent value="badges">
+                <Card className="p-6">
+                  <h3 className="font-bold text-lg mb-4">Your Achievements</h3>
+                  <UserBadges badges={mockBadges} />
                 </Card>
               </TabsContent>
             </Tabs>

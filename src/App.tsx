@@ -9,6 +9,7 @@ import Feed from "./pages/Feed";
 import Profile from "./pages/Profile";
 import Circles from "./pages/Circles";
 import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/feed" element={<Feed />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/circles" element={<Circles />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
